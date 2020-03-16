@@ -1,0 +1,82 @@
+<!-- Head included in head.ejs -->
+<%- include('fragments/head.ejs')%>
+
+<!-- <body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/">Homepage</a></li> -->
+<%- include('fragments/navigation.ejs')%>
+<li class=" main-header__item"><a href="/user">Sign-in</a></li>
+<li class="main-header__item"><a href="/user/products">Add Products</a></li>
+</ul>
+
+</nav>
+</header>
+
+<!-- Body included in navigation.ejs -->
+<!-- <%- include('fragments/navigation.ejs')%> -->
+
+<div class="w3-col l3 s6">
+    <div class="w3-container">
+        <% for(let prod of prods){%>
+        <div class="w3-display-container">
+            <img src="<%= prod.imageUrl%>" style="width: 25%">
+            <div class="container">
+                <form action="/add-to-cart" method="POST">
+                    <div class="w3-display-middle w3-display-hover">
+                        <input type="hidden" name="id" id="id" value="<%= prod.id %> " />
+                        <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                    </div>
+                </form>
+                <button><a class="btn btn-primary" href="/products/<%= prod._id%>">View
+                        Details</a></button>
+                <button><a class="btn btn-primary" href="/edit-product/<%= prod._id%>">Edit</a></button>
+                <form action="/delete-product" method="POST">
+                    <input type="hidden" name="id" id="id" value="<%= prod._id%>" />
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+
+        </div>
+        <p><%= prod.title%><br><b>$<%= prod.price%></b></p>
+        <div class="panel-footer">
+
+        </div> <br><br>
+        <% } %>
+    </div>
+</div>
+
+
+
+<!-- <div class="container">
+        <div class="row">
+            <% for(let prod of prods){%>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Title:<%= prod.title%></div>
+                    <div class="panel-body"><img src="<%= prod.imageUrl%>" class="img-responsive" style="width:25%"
+                            alt="Image"></div>
+                    <div class="panel-footer">$<%= prod.price%></div>
+                    <div class="panel-footer">
+                        <a class="btn btn-primary" href="/products/<%= prod._id%>" role="button">View Details</a>
+                        <a class="btn btn-primary" href="/edit-product/<%= prod._id%>" role="button">Edit</a>
+                        <form action="/delete-product" method="POST">
+                            <input type="hidden" name="id" id="id" value="<%= prod._id%>" />
+                            <button type="submit">Delete</button>
+                        </form>
+                        <form action="/add-to-cart" method="POST">
+                            <input type="hidden" name="id" id="id" value="<%= prod.id %> " />
+                            <button type="submit">Add To Cart</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div><br> -->
+
+
+<!-- Footer included in end.ejs -->
+<%- include('fragments/end.ejs')%>

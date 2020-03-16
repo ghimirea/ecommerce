@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <link rel="stylesheet" href="/mycss/main.css">
+    <link rel="stylesheet" href="/mycss/product.css">
+</head> -->
+
+<%- include('fragments/head.ejs')%>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Homepage</a></li>
+                <li class="main-header__item"><a class="active" href="/user/products">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <%- include('fragments/navigation.ejs')%> -->
+
+
+    <div class="container, form-control">
+        <form class="product-form" action="/user/products" method="POST">
+            <h1>Add Products</h1>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="imageUrl">Image URL:</label><br>
+            <input type="text" id="imageUrl" name="imageUrl"><br><br>
+            <label for="price">Price:</label><br>
+            <input type="number" id="price" name="price"><br><br>
+            <label for="description">Description:</label><br>
+            <textarea name="description" id="description"></textarea><br>
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+    <!-- </body>
+
+</html> -->
+    <%- include('fragments/end.ejs')%>

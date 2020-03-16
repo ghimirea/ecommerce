@@ -1,0 +1,45 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="/mycss/main.css">
+    <link rel="stylesheet" href="/mycss/product.css">
+</head> -->
+<%- include('fragments/head.ejs')%>
+
+<body>
+
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">HomePage</a></li>
+                <li class="main-header__item"><a class="active" href="/user">Sign-In</a></li>
+                <li class="main-header__item"><a href="/user/products">Add Products</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <%- include('fragments/navigation.ejs')%> -->
+
+    <h1>Please Login</h1><br>
+    <form action="/user" method="POST">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form><br>
+
+
+    <!-- </body>
+
+</html> -->
+    <%- include('fragments/end.ejs')%>

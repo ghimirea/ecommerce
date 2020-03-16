@@ -1,0 +1,31 @@
+<%- include('fragments/head.ejs')%>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Homepage</a></li>
+                <li class="main-header__item"><a class="active" href="/user/products">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <div class="container, form-control">
+        <form class="product-form" action="/edit-product" method="POST">
+            <h1>Add Products</h1>
+            <input type="hidden" name="id" value="<%= prod._id%>">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" value="<%= prod.title%>"><br>
+            <label for="imageUrl">Image URL:</label><br>
+            <input type="text" id="imageUrl" name="imageUrl" value="<%= prod.imageUrl%>"><br><br>
+            <label for="price">Price:</label><br>
+            <input type="number" id="price" name="price" value="<%= prod.price%>"><br><br>
+            <label for="description">Description:</label><br>
+            <textarea name="description" id="description"><%= prod.description%></textarea><br>
+            <button type="submit">Edit</button>
+        </form>
+    </div>
+
+    <%- include('fragments/end.ejs')%>

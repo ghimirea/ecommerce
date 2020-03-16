@@ -1,0 +1,29 @@
+<%- include('fragments/head.ejs')%>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Homepage</a></li>
+                <li class="main-header__item"><a class="active" href="/user/products">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <%- include('fragments/navigation.ejs')%> -->
+
+
+    <div class="container">
+        <h1>
+            Title: <%= prod.title%>
+        </h1>
+        <p><img src="<%= prod.imageUrl%>" class="img-responsive" style="width:25%" /></p>
+        <p>
+            Price: $<%= prod.price%>
+        </p>
+        <p>Description: <%= prod.description%> </p>
+
+    </div>
+    <!-- </body>
+
+</html> -->
+    <%- include('fragments/end.ejs')%>
